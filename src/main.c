@@ -20,11 +20,48 @@ El programa finaliza cuando se introduce un 0.
 */
 
 #include <stdio.h>
+void pintaMenu();
+int pideNumEntreRango(int, int, int *);
+void pideOperadores(int, int);
+int suma(int, int);
+int resta(int, int);
+int multiplicacion(int, int);
+int division(int, int);
 
 int main(){
+	int num=1;
+
+	printf("BIENVENIDOS AL PROGRAMA CALCULADORA:\n");
+	pintaMenu();
+	pideNumEntreRango(0,4, &num);
+	if(num=0)
+	{
+		printf("Has salido de la calculadora.");
+	}
+	else{
+
+	}
 
 	
 	getch();
 	
 	return 0;
+}
+void pintaMenu()
+{
+printf("Seleccione la operacion que desea realizar:\n0.Salir\n1.Sumar\n2.Restar\n3.Multiplicar\n4.Dividir\n");
+}
+pideNumEntreRango(int min, int max, int *num)
+{
+
+	do
+	{
+		scanf("%d", &*num);
+		printf("Has seleccionado la opcion %d", *num);
+	} while (*num <= min || *num > max);
+	
+
+	
+
+	return num;
 }
